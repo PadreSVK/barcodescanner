@@ -8,6 +8,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "html5-qrcode": "^2.2.1",
     "vue": "^3.2.33"
   },
   "devDependencies": {
