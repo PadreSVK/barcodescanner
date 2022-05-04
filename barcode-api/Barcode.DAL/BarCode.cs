@@ -2,7 +2,7 @@
 
 namespace Barcode.DAL;
 
-public class BarCode
+public class Barcode
 {
     public Guid Id { get; set; }
     public string Code { get; set; }

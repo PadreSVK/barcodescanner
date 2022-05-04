@@ -4,6 +4,11 @@ namespace Barcode.DAL
 {
     public class MyContext : DbContext
     {
-        public DbSet<BarCode> BarCodes { get; set; }
+        public MyContext(DbContextOptions<MyContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Barcode> BarCodes { get; set; }
     }
 }
