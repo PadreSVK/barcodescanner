@@ -10,8 +10,12 @@
         </div>
         <hr />
         <div>
-            {{ html5QrcodeResult }}
+            successfully created: {{ success }}
+
         </div>
+
+        <button @click="saveBarcode">SaveBarcode</button>
+
     </main>
 </template>
 
@@ -24,11 +28,29 @@ import CodeScanner from "./components/CodeScanner.vue";
 const code = ref("")
 const html5QrcodeResult = ref<Html5QrcodeResult>();
 
+const success = ref(false)
+
 function scanned(scannedCode: string, decodedResult: Html5QrcodeResult) {
     code.value = scannedCode
     html5QrcodeResult.value = decodedResult
 }
 
+
+async function saveBarcode() {
+    const response = await fetch("https://localhost:7027/Barcode", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            code: code.value,
+            type: html5QrcodeResult.value?.result.format?.formatName
+        })
+    });
+    success.value = true
+
+}
 
 </script>
 

@@ -21,7 +21,7 @@ onMounted(() => {
     const html5QrcodeScanner = new Html5QrcodeScanner('qr-code-full-region',
         {
             fps: 10, qrbox: {...props},
-            supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA],
+            supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA, Html5QrcodeScanType.SCAN_TYPE_FILE],
             formatsToSupport: [
                 Html5QrcodeSupportedFormats.CODE_128,
                 Html5QrcodeSupportedFormats.EAN_13,
