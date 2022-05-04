@@ -1,6 +1,6 @@
 using System;
 
-namespace XXX
+namespace Barcode.API
 {
     public class WeatherForecast
     {
